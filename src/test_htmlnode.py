@@ -11,6 +11,10 @@ class Testhtmlnode(unittest.TestCase):
         print(f"EQomparing value: {node.value} == {node2.value} : {node.value == node2.value}")
         print(f"EQComparing children: {node.children} == {node2.children} : {node.children == node2.children}")
         print(f"EQComparing props: {node.props} == {node2.props} : {node.props == node2.props }")
+        print(f'guy cmon wat ??????? {node.children.tag} == {node2.children.tag} : {node.children.tag == node2.children.tag}')
+        print(f'guy cmon wat ??????? {node.children.value} == {node2.children.value} : {node.children.value == node2.children.value}')
+        print(f'guy cmon wat ??????? {node.children.children} == {node2.children.children} : {node.children.children == node2.children.children}')
+        print(f'guy cmon wat ??????? {node.children.props} == {node2.children.props} : {node.children.props== node2.children.props}')
         self.assertEqual(node, node2)
 
 
@@ -46,6 +50,10 @@ class Testhtmlnode(unittest.TestCase):
         print(f"EQEMPTAGComparing value: {node.value} == {node2.value} : {node.value == node2.value}")
         print(f"EQEMPTAGComparing children: {node.children} == {node2.children} : {node.children == node2.children}")
         print(f"EQEMPTAGComparing props: {node.props} == {node2.props} : {node.props == node2.props }")
+        print(f'guy cmon wat ??????? {node.children.tag} == {node2.children.tag} : {node.children.tag == node2.children.tag}')
+        print(f'guy cmon wat ??????? {node.children.value} == {node2.children.value} : {node.children.value == node2.children.value}')
+        print(f'guy cmon wat ??????? {node.children.children} == {node2.children.children} : {node.children.children == node2.children.children}')
+        print(f'guy cmon wat ??????? {node.children.props} == {node2.children.props} : {node.children.props== node2.children.props}')
         self.assertEqual(node, node2)
     #When props or children is None or empty.
 

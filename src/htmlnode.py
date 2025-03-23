@@ -12,7 +12,12 @@ class HTMLNode():
         #Child classes will override
         raise NotImplementedError
     
-    
+    def __eq__(self, other):
+        return (self.tag == other.tag and 
+                self.value == other.valuee and 
+                self.children == other.children and
+                self.props == other.props
+                )
     
     def props_to_html(self):
         print('--------------IS THIS LINE RUNNING ? BUGS PROBABLY HERE')
