@@ -1,12 +1,9 @@
-
-
-
 class HTMLNode():
     def __init__(self, tag=None, value=None, children=None, props=None):
         self.tag = tag
         self.value = value
         self.children = children
-        self.props = self.props
+        self.props = props
 
 
 
@@ -18,7 +15,9 @@ class HTMLNode():
     
     
     def props_to_html(self):
+        print('--------------IS THIS LINE RUNNING ? BUGS PROBABLY HERE')
         for key,value in self.props.items():
+
             print(f'href="{key}" target="{value}"')
        
         # Add a props_to_html(self) method. It should return
@@ -29,3 +28,5 @@ class HTMLNode():
                                             #soooooooooooo for every key value in items maybe
 
 
+    def __repr__(HTMLNode):
+        return(f'HTMLNode({HTMLNode.tag}, {HTMLNode.value}, {HTMLNode.children}, {HTMLNode.props} )')

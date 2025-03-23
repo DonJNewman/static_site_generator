@@ -32,7 +32,7 @@ class TestTextNode(unittest.TestCase):
 
 
 
-    def test_url_is_none(self):
+    def test_url_is_none(self): #URL IS NONE
         node = TextNode("This is a text node", TextType.BOLD, None)
         node2 = TextNode("This is a text node", TextType.BOLD, None)
         self.assertEqual(node, node2)
