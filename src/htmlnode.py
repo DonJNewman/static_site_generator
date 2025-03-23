@@ -14,7 +14,7 @@ class HTMLNode():
     
     def __eq__(self, other):
         return (self.tag == other.tag and 
-                self.value == other.valuee and 
+                self.value == other.value and 
                 self.children == other.children and
                 self.props == other.props
                 )
