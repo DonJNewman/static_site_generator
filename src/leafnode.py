@@ -12,12 +12,17 @@ class LeafNode(HTMLNode):
     #     return "".join(split_tag)
 
     def to_html(self):
+
         if self.value == None:
             raise ValueError
         if self.tag == None:
             return(f"{self.value}")
-        if self.tag == "<a>":
-            return(f'<a {self.props}>{self.value}</a>')
+        if self.tag == "a":
+            print(f'YOOOOOOOOOOOO HERES THE PROPS {self.props["href"]}')
+            for key, value in self.props.items():
+                prop_key = key
+                prop_value = value
+            return(f'<a {prop_key}="{prop_value}">{self.value}</a>')
         else:
             return(f'<{self.tag}>{self.value}</{self.tag}>')
 
