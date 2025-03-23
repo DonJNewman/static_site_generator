@@ -1,0 +1,31 @@
+
+
+
+class HTMLNode():
+    def __init__(self, tag=None, value=None, children=None, props=None):
+        self.tag = tag
+        self.value = value
+        self.children = children
+        self.props = self.props
+
+
+
+
+    def to_html(self):
+        #Child classes will override
+        raise NotImplementedError
+    
+    
+    
+    def props_to_html(self):
+        for key,value in self.props.items():
+            print(f'href="{key}" target="{value}"')
+       
+        # Add a props_to_html(self) method. It should return
+        # a string that represents the HTML attributes of the node. For example, if self.props is:
+
+       #gonna have to think about this one for a sec, 
+                                        #gotta unpack the dictionary right? cus props could have a bunch of items
+                                            #soooooooooooo for every key value in items maybe
+
+
