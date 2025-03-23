@@ -4,8 +4,13 @@ from htmlnode import HTMLNode
 
 class Testhtmlnode(unittest.TestCase):
     def test_eq(self): #TEST EQUAL
+   
         node = HTMLNode("<p>", "This is my value (:", (HTMLNode("<h3>", "ooooo smol node", None, {"href": "https://www.google.com", "target": "_blank"})), {"href": "https://www.google.com", "target": "_blank"} )
         node2 = HTMLNode("<p>", "This is my value (:", (HTMLNode("<h3>", "ooooo smol node", None, {"href": "https://www.google.com", "target": "_blank"})), {"href": "https://www.google.com", "target": "_blank"} )
+        print(f"EQComparing tag: {node.tag} == {node2.tag} : { node.tag == node2.tag }")
+        print(f"EQomparing value: {node.value} == {node2.value} : {node.value == node2.value}")
+        print(f"EQComparing children: {node.children} == {node2.children} : {node.children == node2.children}")
+        print(f"EQComparing props: {node.props} == {node2.props} : {node.props == node2.props }")
         self.assertEqual(node, node2)
 
 
@@ -29,12 +34,24 @@ class Testhtmlnode(unittest.TestCase):
         node2 = HTMLNode("<p>", "This is my value (:", (HTMLNode("<h3>", "ooooo smol  child altered node", None, {"href": "https://www.facebook.com", "target": "_blank"})), {"href": "https://www.google.com", "target": "_blank"} ) 
         self.assertNotEqual(node, node2)    
 
-    def test_eq(self): #NOT EQUAL LINKS
+    def test_not_eq_links(self): #NOT EQUAL LINKS
         node = HTMLNode("<p>", "This is my value (:", (HTMLNode("<h3>", "ooooo smol node", None, {"href": "https://www.google.com", "target": "_blank"})), {"href": "https://www.facebook.com", "target": "_blank"} )
         node2 = HTMLNode("<p>", "This is my value (:", (HTMLNode("<h3>", "ooooo smol node", None, {"href": "https://www.google.com", "target": "_blank"})), {"href": "https://www.google.com", "target": "_blank"} )
         self.assertNotEqual(node, node2)
 
-    
+    def test_empty_value(self): #TEST EQUAL
+        node = HTMLNode("<p>", "This is my value (:", (HTMLNode("<h3>", "ooooo smol node", None, {"href": "https://www.google.com", "target": "_blank"})), {"href": "https://www.google.com", "target": "_blank"} )
+        node2 = HTMLNode("<p>", "This is my value (:", (HTMLNode("<h3>", "ooooo smol node", None, {"href": "https://www.google.com", "target": "_blank"})), {"href": "https://www.google.com", "target": "_blank"} )
+        print(f"EQEMPTYTAGComparing tag: {node.tag} == {node2.tag} : { node.tag == node2.tag }")
+        print(f"EQEMPTAGComparing value: {node.value} == {node2.value} : {node.value == node2.value}")
+        print(f"EQEMPTAGComparing children: {node.children} == {node2.children} : {node.children == node2.children}")
+        print(f"EQEMPTAGComparing props: {node.props} == {node2.props} : {node.props == node2.props }")
+        self.assertEqual(node, node2)
+    #When props or children is None or empty.
+
+# When attributes (e.g., tag, value, props, or children) are missing or empty.
+
+# When the node is created with different data types, like an integer as the value or invalid data in props.
 
 
 if __name__ == "__main__":
