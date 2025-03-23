@@ -14,8 +14,16 @@ class TestLeafNode(unittest.TestCase):
         self.assertEqual(node.to_html(), '<a href="https://google.com">scoobydoo!</a>')
         return self.assertEqual(node.to_html(), '<a href="https://google.com">scoobydoo!</a>')
     
+    def test_bold_phont(self):
+        node = LeafNode("b", "scoobydoo!", {"href": "https://google.com"})
+        self.assertEqual(node.to_html(), "<b>scoobydoo!</b>")
+        return self.assertEqual(node.to_html(), "<b>scoobydoo!</b>")
 
 
+    def test_no_value(self):
+        node = LeafNode("p", None)
+        self.assertEqual(node.to_html(), v)
+        return self.assertEqual(node.to_html(), ValueError)        
 
 
 
